@@ -608,7 +608,7 @@ text-shadow:
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
-            background-color: rgba(0, 0, 0, 0.201); /* Dark tint */
+            background-color: rgba(0, 0, 0, 0.226); /* Dark tint */
         }
 
         .stat-item {
