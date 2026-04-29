@@ -23,26 +23,31 @@ document.addEventListener('keydown', (e) => {
 
 // Auto slide every 4 seconds
 //setInterval(() => goToSlide(current + 1), 4000);
-{const counters = document.querySelectorAll('.counter');
+{const counters = document.querySelectorAll('.stat-number');
+    const totalDuration = 3000; // 4 seconds total
 
-counters.forEach(counter => {
-   const target = +counter.getAttribute('data-target');
-   const speed = 200;
+    const animateCounters = () => {
+        let startTime = null;
 
-   const update = () => {
-      const current = +counter.innerText;
-      const increment = Math.ceil(target / speed);
+        const step = (currentTime) => {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / totalDuration, 1);
 
-      if(current < target){
-         counter.innerText = current + increment;
-         setTimeout(update,20);
-      } else {
-         counter.innerText = target;
-      }
-   };
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                counter.innerText = Math.floor(progress * target);
+            });
 
-   update();
-});
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+
+        window.requestAnimationFrame(step);
+    };
+
+    // Start animation on load
+    window.onload = animateCounters;
 }
 
 

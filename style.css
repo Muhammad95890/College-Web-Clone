@@ -591,83 +591,73 @@ text-shadow:
 
 
 
-.stats-section{
-   margin-top: -2.9%;
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   background: #1e3a5f;
-   padding-top: 80px;
-   padding-bottom: 80px;
-   background-image: url('/other-images/goku.jpg');
-   background-size: cover;
-   background-position: center;
-   position: relative;
-}
 
-.stats-section::before{
-   content: '';
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: rgba(20, 50, 90, 0.75); 
-   z-index: 0;
-}
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 150px; /* Brings items closer together */
+            padding: 80px 20px;
+            padding-bottom: 70px;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: left; /* Aligns text under the number/icon */
+            margin-top: -2.9%;
+            /* Background Setup */
+            background-image: url('https://gevpgkrb.ac.in/sitefront/university/assets/media/backgrounds/1.jpg'); /* REPLACE WITH YOUR FILENAME */
+            background-color: rgb(43, 62, 79); /* Fallback color */
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.201); /* Dark tint */
+        }
 
-.stat{
-   position: relative;
-   text-align: left;
-   color: white;
-}
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Aligns line and label to the left */
+        }
 
-.stat{
-   text-align: left;
-   color: white;
-}
+        .number-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content:center;
+        }
 
-.stat-top{
-   display: flex;
-   align-items: center;
-   gap: 15px;
-}
+        /* Icon Styling */
+        .number-wrapper i { font-size: 2.2rem; }
+        .icon-yellow { color: #f1c40f; }
+        .icon-red    { color: #e74c3c; }
+        .icon-blue   { color: #3498db; }
+        .icon-green  { color: #2ecc71; }
 
-.stat-icon{
-   font-size: 45px;
-}
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+        }
 
-.stat h2{
-   font-size: 48px;
-   margin: 0;
-   color: white;
-}
+        .stat-line {
+            width: 50px;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.4);
+            margin: 15px 0;
+            display: block;
+        }
 
-.stat-icon{
-   font-size: 40px;
-}
+        .stat-label {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-align: center;
+           
+        }
 
-.stat h2{
-   font-size: 48px;
-   margin: 10px 0 5px 0;
-   color: white;
-}
+        /* Responsive: Stack items on mobile */
+        @media (max-width: 768px) {
+            .stats-container { flex-direction: column; align-items: center; gap: 40px; }
+        }
 
-.line{
-   width: 40px;
-   height: 3px;
-   background: white;
-   margin: 8px 0;
-}
-
-.stat p{
-   font-size: 18px;
-   letter-spacing: 2px;
-   color: white;
-   margin: 0;
-   font-weight: bold;
-
-}
 
 
 
