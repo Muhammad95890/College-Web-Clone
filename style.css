@@ -603,7 +603,7 @@ text-shadow:
             text-align: left; /* Aligns text under the number/icon */
             margin-top: -2.9%;
             /* Background Setup */
-            background-image: url('https://gevpgkrb.ac.in/sitefront/university/assets/media/backgrounds/1.jpg'); /* REPLACE WITH YOUR FILENAME */
+            background-image: url('other-images/back-ground-for-stat.jpg'); /* REPLACE WITH YOUR FILENAME */
             background-color: rgb(43, 62, 79); /* Fallback color */
             background-size: cover;
             background-position: center;
