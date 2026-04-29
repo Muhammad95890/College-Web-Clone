@@ -604,11 +604,11 @@ text-shadow:
             margin-top: -2.9%;
             /* Background Setup */
             background-image: url("back-ground-for-stat.jpg"); /* REPLACE WITH YOUR FILENAME */
-            background-color: rgb(43, 62, 79); /* Fallback color */
+            background-color: rgba(43, 62, 79, 0.868); /* Fallback color */
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
-            background-color: rgba(0, 0, 0, 0.226); /* Dark tint */
+            background-color: rgba(0, 0, 0, 0.2); /* Dark tint */
         }
 
         .stat-item {
