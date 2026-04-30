@@ -306,8 +306,8 @@ body {
 }
 
 .slide img {
-   padding-top: 40px;
-   padding-bottom: 40px;
+   padding-top: px;
+   padding-bottom: px;
    width: 100%;
    height: 100%;
    object-fit: cover;
@@ -371,6 +371,7 @@ text-shadow:
 .space {
    background-color: rgb(250, 250, 225);
    padding-top: 40px;
+   margin-top: -5%;
 }
 
 .img-responsive {
