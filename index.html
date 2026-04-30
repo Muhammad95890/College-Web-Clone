@@ -680,47 +680,36 @@
 
 
 
-<!-- Font Awesome in <head> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<div class="faculties-section">
-
-   <div class="faculties-heading">
-      <h2><em>Available</em> <strong>Faculties</strong></h2>
-      <p>The College has 4 Faculties and each comprising of several Departments of Studies.</p>
-      <div class="fancy-line">
-         <span class="line-left"></span>
-         <span class="line-dot"></span>
-         <span class="line-right"></span>
-      </div>
-   </div>
-
-   <div class="faculties-cards">
-
-      <div class="faculty-card green">
-         <i class="fa-solid fa-person-chalkboard"></i>
-         <h3>ART</h3>
-      </div>
-
-      <div class="faculty-card purple">
-         <i class="fa-solid fa-flask"></i>
-         <h3>SCIENCE</h3>
-      </div>
-
-      <div class="faculty-card cyan">
-         <i class="fa-solid fa-calculator"></i>
-         <h3>COMMERCE</h3>
-      </div>
-
-      <div class="faculty-card red">
-         <i class="fa-solid fa-desktop"></i>
-         <h3>COMPUTERS</h3>
-      </div>
-
-   </div>
-
+<!-- FACULTY -->
+<div class="faculty-hero">
+    <h2>Available Faculties</h2>
+    <p class="sub-text">The College has 4 Faculties and each comprising of several Departments of Studies.</p>
+   
+    <div class="divider">
+        <div class="line"></div>
+        <div class="circle"></div>
+        <div class="line"></div>
+    </div>
+    <div class="faculty-row">
+        <div class="card art" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); setTimeout(() => { window.location.href='#' }, 800);">
+            <div class="img-box"></div>
+            <div class="label">ART</div>
+        </div>
+        <div class="card science" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); setTimeout(() => { window.location.href='#' }, 800);">
+            <div class="img-box"></div>
+            <div class="label">SCIENCE</div>
+        </div>
+        <div class="card commerce" onclick="window.scrollTo({top: 0, behavior: 'smooth'});setTimeout(() => { window.location.href='#' }, 800);">
+            <div class="img-box"></div>
+            <div class="label">COMMERCE</div>
+        </div>
+        <div class="card computers" onclick="window.scrollTo({top: 0, behavior: 'smooth'});setTimeout(() => { window.location.href='#' }, 800);">
+            <div class="img-box"></div>
+            <div class="label">COMPUTERS</div>
+        </div>
+    </div>
 </div>
-</div>
+
 
 
 

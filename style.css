@@ -809,123 +809,130 @@ text-shadow:
 
 
 /*Faculty section!!!!!!!!!!!!!!!!*/
-.faculties-section{
-   position: relative;
-   padding: 80px 0;    
-   text-align: center;
-   background-image: url("goku.jpg");
-   background-size: cover;
-   background-position: center;
-   width: 100%;
-   margin: 0;
-}
-.faculties-section::before{
-   content: '';
-   position: absolute;
-   top: 0; left: 0;
-   width: 100%;
-   height: 100%;
-   background:rgba(47, 139, 219, 0.151);
-   z-index: 0;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #f0f0f0;
+            height: 200vh; /* For scroll demo */
+        }
 
-.faculties-heading,
-.faculties-cards{
-   position: relative;
-   z-index: 1;
-}
+        .faculty-hero {
+            width: 100%;
+            height: 550px;
+            background: linear-gradient(
+                rgba(8, 77, 137, 0.9), rgba(8, 77, 137, 0.9)
+                ),
+                        url('https://gevpgkrb.ac.in/sitefront/university/assets/media/backgrounds/4.jpg') center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
 
-/* Heading */
-.faculties-heading h2{
-   font-size: 42px;
-   color: white;
-   margin: 0 0 12px 0;
-   font-family: Georgia, serif;
-}
+        h2 {
+            font-size: 42px;
+            margin: 0;
+            font-family: 'Georgia', serif;
+        }
 
-.faculties-heading h2 em{
-   font-style: italic;
-   font-weight: normal;
-}
+        .sub-text {
+            font-size: 15px;
+            margin: 10px 0;
+            opacity: 0.9;
+        }
 
-.faculties-heading h2 strong{
-   font-weight: 900;
-}
+        /* Divider: --------o--------- */
+        .divider {
+            display: flex;
+            align-items: center;
+            width: 250px;
+            margin: 20px 0 45px 0;
+        }
+        .line { height: 1px; background-color: rgba(255, 255, 255, 0.4); flex-grow: 1; }
+        .circle { width: 8px; height: 8px; background: #333; border: 1px solid #fff; border-radius: 50%; margin: 0 12px; }
 
-.faculties-heading p{
-   font-size: 15px;
-   color: #ddd;
-   margin: 0 0 25px 0;
-}
+        .faculty-row {
+            display: flex;
+            gap: 15px;
+            perspective: 1000px; /* Helps with smooth animation */
+        }
 
-/* Fancy Line */
-.fancy-line{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   margin-bottom: 50px;
-}
+        .card {
+            width: 160px;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 2px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            text-decoration: none;
+            color:white;
+           
+            /* BOUNCE FROM RIGHT - Modified to prevent touching */
+            opacity: 0;
+            transform: translateX(100vw);
+            animation: cleanBounce 1.2s cubic-bezier(0.175, 0.885, 0.32, 1) forwards;
+        }
 
-.line-left,
-.line-right{
-   display: inline-block;
-   width: 200px;
-   height: 1px;
-   background: #aaa;
-}
+        /* IMAGE CONTAINER */
+        .img-box {
+            width: 60px;
+            height: 60px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.4s ease;
+            /* Placeholder white filter */
+            filter: brightness(0) invert(1);
+        }
 
-.line-dot{
-   display: inline-block;
-   width: 12px;
-   height: 12px;
-   background: #aaa;
-   border-radius: 50%;
-   margin: 0 5px;
-}
+        /* TEXT LABEL */
+        .label {
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            margin-top: 15px;
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
 
-/* Cards */
-.faculties-cards{
-   display: flex;
-   justify-content: center;
-   gap: 20px;
-   flex-wrap: wrap;
-}
+        /* HOVER ANIMATION LOGIC */
+        .card:hover .label {
+            opacity: 0; /* Text disappears */
+        }
 
-.faculty-card{
-   width: 200px;
-   height: 200px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   gap: 15px;
-   cursor: pointer;
-   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .card:hover .img-box {
+            transform: translateY(25px); /* Image moves down into the empty space */
+        }
 
-.faculty-card:hover{
-   transform: translateY(-8px);
-   box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-}
+        /* Colors & Delays - Delays prevent them from sliding on top of each other */
+        .art      { background-color: #28a745; animation-delay: 0.1s; }
+        .science  { background-color: #9c27b0; animation-delay: 0.3s; }
+        .commerce { background-color: #00bcd4; animation-delay: 0.5s; }
+        .computers { background-color: #d32f2f; animation-delay: 0.7s; }
 
-.faculty-card i{
-   font-size: 55px;
-   color: white;
-}
+        /* Assign your images here */
+        .art .img-box      { background-image: url('https://gevpgkrb.ac.in/sitefront/university/assets/img/art-humanities.png'); }
+        .science .img-box  { background-image: url('https://gevpgkrb.ac.in/sitefront/university/assets/img/science.png'); }
+        .commerce .img-box { background-image: url('https://gevpgkrb.ac.in/sitefront/university/assets/img/accounting.png'); }
+        .computers .img-box { background-image: url('https://gevpgkrb.ac.in/sitefront/university/assets/img/computer.png'); }
 
-.faculty-card h3{
-   color: white;
-   font-size: 16px;
-   font-weight: 900;
-   letter-spacing: 2px;
-   margin: 0;
-}
-
-/* Colors */
-.faculty-card.green  { background: #2e8b2e; }
-.faculty-card.purple { background: #9b30c8; }
-.faculty-card.cyan   { background: #00aec8; }
-.faculty-card.red    { background: #e03030; }
+        @keyframes cleanBounce {
+            0% {
+                opacity: 0;
+                transform: translateX(100vw);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
 
 
